@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+        {% if current_user.is_authenticated %}
+                <p></p>
+                <center><a href="base_training"><img src="static/images/base_training.jpg"></a></center>
+                <form action="/base_training"  target="_blank">
+                        <center><button>Базовый цикл</button></center>
+                </form>
+                <center><p class="text">направленность: общее физическое развитие в домашних условиях</p></center>
+                <center><p class="text">оборудывание: не требуется</p></center>
+                <center><a href="fat_burning_training"><img src="static/images/fat_burning_training.jpg"></a></center>
+                <form action="/fat_burning_training" target="_blank">
+                        <center><button>Жиросжигающий цикл</button></center>
+                </form>
+                <center><p class="text">направленность: жиросжигание</p></center>
+                <center><p class="text">оборудывание: стандартный набор тренажёров</p></center>
+                <center><a href="power_training"><img src="static/images/power_training.jpg"></a></center>
+                <form action="/power_training"  target="_blank">
+                        <center><button>Силовой цикл</button></center>
+                </form>
+                <center><p class="text">направленность: увеличение силовых показателей</p></center>
+                <center><p class="text">оборудывание: стандартный набор тренажёров</p>
+        {% else %}
+                <p></p>
+                <center><a href="base_training"><img src="static/images/base_training.jpg"></a></center>
+                <center><p class="text">Базовый цикл</p></center>
+                <center><p class="text">направленность: общее физическое развитие в домашних условиях</p></center>
+                <center><p class="text">оборудывание: не требуется</p></center>
+                <center><a href="fat_burning_training"><img src="static/images/fat_burning_training.jpg"></a></center>
+                <center><p class="text">Жиросжигающий цикл</p></center>
+                <center><p class="text">направленность: жиросжигание</p></center>
+                <center><p class="text">оборудывание: стандартный набор тренажёров</p></center>
+                <center><a href="power_training"><img src="static/images/power_training.jpg"></a></center>
+                <center><p class="text">Силовой цикл</p></center>
+                <center><p class="text">направленность: увеличение силовых показателей</p></center>
+                <center><p class="text">оборудывание: стандартный набор тренажёров</p></center>
+        {% endif %}
+
+{% endblock %}

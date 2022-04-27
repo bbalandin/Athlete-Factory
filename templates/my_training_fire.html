@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>training wisely</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        {% if current_user.is_authenticated %}
+            <ul>
+                <li><a href="logout">выйти из аккаунта</a></li>
+                <li><a href="my_training">мои тренировки</a></li>
+                <li><a href="catalog">каталог</a></li>
+                <li><a href="anthropometry">антропометрия</a></li>
+            </ul>
+            <p></p>
+            <center><p class="text">Привет, {{ current_user.name }}</p></center>
+        {% else %}
+            <ul>
+                <li><a href="my_training">мои тренировки</a></li>
+                <li><a href="catalog">каталог</a></li>
+                <li><a href="anthropometry">антропометрия</a></li>
+                <li><a href="register">зарегистрироваться</a></li>
+                <li><a href="login">войти</a></li>
+            </ul>
+        {% endif %}
+        <center><h2 class="text">1-я неделя</h2></center>
+        <form action="/stato_legs"  target="_blank">
+        <center><button>ПОНЕДЕЛЬНИК</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button >ВТОРНИК</button></center>
+        </form>
+        <form action="/stato_back" target="_blank">
+        <center><button>СРЕДА</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button>ЧЕТВЕРГ</button></center>
+        </form>
+        <form action="/stato_back" target="_blank">
+        <center><button>ПЯТНИЦА</button></center>
+        </form>
+        <form action="/stato_legs" target="_blank">
+        <center><button>СУББОТА</button></center>
+        </form>
+        <center><h2 class="text">2-я неделя</h2></center>
+        <form action="/stato_back" target="_blank">
+        <center><button>ПОНЕДЕЛЬНИК</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button>ВТОРНИК</button></center>
+        </form>
+        <form action="/stato_legs" target="_blank">
+        <center><button>СРЕДА</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button>ЧЕТВЕРГ</button></center>
+        </form>
+        <form action="/stato_legs" target="_blank">
+        <center><button>ПЯТНИЦА</button></center>
+        </form>
+        <form action="/stato_back" target="_blank">
+        <center><button>СУББОТА</button></center>
+        </form>
+        <center><h2 class="text">3-я неделя</h2></center>
+        <form action="/stato_legs" target="_blank">
+        <center><button>ПОНЕДЕЛЬНИК</button></center>
+        </form>
+        <form action="/stato_back" target="_blank">
+        <center><button>ВТОРНИК</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button>СРЕДА</button></center>
+        </form>
+        <form action="/stato_legs" target="_blank">
+        <center><button>ЧЕТВЕРГ</button></center>
+        </form>
+        <form action="/stato_chest" target="_blank">
+        <center><button>ПЯТНИЦА</button></center>
+        </form>
+        <form action="/stato_back" target="_blank">
+        <center><button>СУББОТА</button></center>
+        </form>
+    </body>
+</html>

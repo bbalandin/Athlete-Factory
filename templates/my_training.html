@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.cycle %}
+        <form action="/my_training_fire"  target="_blank">
+            <center><button>Начать тренироваться</button></center>
+        </form>
+    {% else %}
+        <center><h2 class="text">Сначала выберите цикл в разделе "каталог"</h2></center>
+    {% endif %}
+{% endblock %}
