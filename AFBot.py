@@ -36,6 +36,7 @@ def db_get(_select, _from, _where=True, _param=0):
 
 def get_am():
     #f'рост: {res[0]}\nвес: {res[1]}\nталия: {res[2]}\nобхват бедер: {res[3]}\nобхват груди: {res[4]}'
+    print(f'get_am({sender})')
     empty = 'Пустая антропометрия!'
     try:
         res = db_get("date_, height, weight, waist, hip_girth, bust",
@@ -52,11 +53,11 @@ def get_am():
 
 
 answers = {
-    '/help': ['Помощь по работе с ботом:\n/am - ваша антропометрия'],
-    '/start': [f'Приветствую вас!\nЯ буду помогать вам тренероваться\n/help для подробностей'],
-    '/am': [get_am()],
-    '/confirm': ['функция не работает'],
-    '/reset': ['функция не работает']
+    '/help': [lambda:'Помощь по работе с ботом:\n/am - ваша антропометрия'],
+    '/start': [lambda:f'Приветствую вас!\nЯ буду помогать вам тренероваться\n/help для подробностей'],
+    '/am': [get_am],
+    '/confirm': [lambda:'функция не работает'],
+    '/reset': [lambda:'функция не работает']
 }
 
 
@@ -72,7 +73,7 @@ def for_text(update, context):
         if text in answers.keys():
             print('building answer...')
             # собираем ответ, если нами учтен вопрос
-            answer = choice(answers[text])
+            answer = str(answers[text][0]())
         if answer:
             print('sending answer...')
             # отсылаем ответ, если он собран и юзер пользуется telegram
